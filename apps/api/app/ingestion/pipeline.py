@@ -51,7 +51,8 @@ def ingest_file(
                 document_id=doc.id,
                 chunk_index=idx,
                 chunk_text=chunk["text"],
-                token_count=len(chunk["text"].split()),
+                section_heading=chunk.get("section_heading"),
+                token_count=chunk.get("token_count"),
                 metadata_json={
                     "filename": file_path.name,
                     "chunk_index": idx,
